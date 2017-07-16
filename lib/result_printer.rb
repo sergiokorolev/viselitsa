@@ -4,11 +4,11 @@
 class ResultPrinter
   def initialize
     @status_image = []
-
+    current_path = File.dirname(__FILE__)
     counter = 0
 
     while counter <= 7
-      file_name = "image/#{counter}.txt"
+      file_name = current_path + "/../image/#{counter}.txt"
 
       # Проверку наличия файла можно заменить на блок begin-rescue, при этом
       # ловить только кviselitsa.rbонкретную ошибку обращения к файловой системе.
