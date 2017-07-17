@@ -24,10 +24,9 @@ require "unicode_utils"
 # необходимый модуль, написав:
 #
 # require "unicode_utils/upcase"
-current_path = File.dirname(__FILE__)
-require_relative current_path + "/lib/game"
-require_relative current_path + "/lib/result_printer"
-require_relative current_path + "/lib/word_reader"
+require_relative "lib/game"
+require_relative "lib/result_printer"
+require_relative "lib/word_reader"
 
 puts "Игра виселица. Версия 4. (c) goodprogrammer.ru\n\n"
 sleep 1
@@ -36,7 +35,7 @@ printer = ResultPrinter.new
 
 word_reader = WordReader.new
 
-words_file_name = current_path + "/data/words.txt"
+words_file_name = File.dirname(__FILE__) + "/data/words.txt"
 
 # Все изменения логики будут у нас в классе Game. Нам нужно в двух местах
 # преобразовать полученные данные в верхний регистр, используя метод upcase
